@@ -37,7 +37,10 @@
           </div>
           <div class="col-md-2">
             <p><strong>Assignees:</strong></p>
-            <p>{{ task.assignees == null ? 0 : task.assignees.length }}</p>
+            <p *ngIf="task.assignees === null">0</p>
+            <p *ngIf="task.assignees !== null">
+              <span>{{ getAssignees(task) }}</span>
+            </p>
           </div>
         </div>
         <mat-expansion-panel>

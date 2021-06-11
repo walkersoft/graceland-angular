@@ -13,6 +13,12 @@ export class AppComponent implements OnInit {
     this.tasks = JSON.parse(this.taskData);
   }
 
+  getAssignees(task: ITask): string {
+    let names: string[] = [];
+    task.assignees.forEach(t => names.push(t.firstName + " " + t.lastName));
+    return names.join(", ");
+  }
+
   //this stupidity is just for fun
   taskData: string = `
   [
