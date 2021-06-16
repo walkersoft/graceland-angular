@@ -24,11 +24,11 @@ export class AppComponent implements OnInit {
   [
     {
       "id": 1,
-      "title": "nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam",
-      "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+      "title": "Temper the usage of Flexbox for Task Layouts",
+      "description": "Make incremental improvements to the design using flexbox for layout control in conjuction with Angular Material controls.",
       "points": 14,
       "completed": false,
-      "creator": null,
+      "creator": "Sibyl Hosburn",
       "assignees": [
         {
           "id": "c0cd9c0a-c196-4344-a1a9-937a9ab52893",

@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <div><h1>Task List</h1></div>
-  <div *ngFor="let task of tasks">
+  <div *ngFor="let task of tasks" class="ml-5 mr-5">
     <mat-card [style.backgroundColor]="'#ddd'" fxLayout="column">
       <div fxLayout="row" fxLayoutAlign="start center">
         <h5 fxFlex>{{ task.title }}</h5>
