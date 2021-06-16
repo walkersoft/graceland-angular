@@ -32,10 +32,6 @@
           <p>{{ task.points }}</p>
         </div>
         <div fxFlex>
-          <p><strong>Tasks:</strong></p>
-          <p>5</p>
-        </div>
-        <div fxFlex>
           <p><strong>Assignees:</strong></p>
           <p *ngIf="task.assignees === null">0</p>
           <p *ngIf="task.assignees !== null">
