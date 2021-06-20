@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ITask } from 'src/shared/interfaces/ITask';
 
 @Component({
@@ -8,6 +9,25 @@ import { ITask } from 'src/shared/interfaces/ITask';
 })
 export class AppComponent implements OnInit {
   tasks: ITask[] = [];
+
+  constructor(private snackBar: MatSnackBar) {}
+  snackBarDuration = {duration: 5000};
+
+  openTask(): void {
+    this.snackBar.open("Opened the task.", "GOT IT!", this.snackBarDuration);
+  }
+
+  markComplete(): void {
+    this.snackBar.open("Task marked complete.", "BOOYAH!", this.snackBarDuration);
+  }
+
+  deleteTask(): void {
+    this.snackBar.open("Imaginary task was deleted.", "WTF!!", this.snackBarDuration);
+  }
+
+  editTask(): void {
+    this.snackBar.open("Task is being worked on.", "...WORK?!", this.snackBarDuration);
+  }
 
   ngOnInit(): void {
     this.tasks = JSON.parse(this.taskData);
