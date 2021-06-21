@@ -11,7 +11,9 @@ export class AppComponent implements OnInit {
   tasks: ITask[] = [];
 
   constructor(private snackBar: MatSnackBar) {}
+
   snackBarDuration = {duration: 5000};
+  taskHeaders: string[] = ['title', 'creator', 'dueDate', 'points', 'actions'];
 
   openTask(): void {
     this.snackBar.open("Opened the task.", "GOT IT!", this.snackBarDuration);
@@ -21,8 +23,8 @@ export class AppComponent implements OnInit {
     this.snackBar.open("Task marked complete.", "BOOYAH!", this.snackBarDuration);
   }
 
-  deleteTask(): void {
-    this.snackBar.open("Imaginary task was deleted.", "WTF!!", this.snackBarDuration);
+  deleteTask(n: number): void {
+    this.snackBar.open("Imaginary task " + n + " was deleted.", "WTF!!", this.snackBarDuration);
   }
 
   editTask(): void {

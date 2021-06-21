@@ -12,7 +12,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar'
     MatToolbarModule,
     MatSidenavModule,
     MatSnackBarModule,
+    MatTableModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

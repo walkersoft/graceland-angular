@@ -13,7 +13,7 @@
 
       <div fxLayout="column" fxLayoutGap="10px">
         <div><h1>Task List</h1></div>
-        <div *ngFor="let task of tasks" class="ml-5 mr-5">
+        <!-- <div *ngFor="let task of tasks" class="ml-5 mr-5">
           <mat-card [style.backgroundColor]="'#ddd'" fxLayout="column">
             <div fxLayout="row" fxLayoutAlign="start center">
               <h5 fxFlex>{{ task.title }}</h5>
@@ -59,7 +59,46 @@
               <p>{{ task.description }}</p>
             </mat-expansion-panel>
           </mat-card>
-        </div>
+        </div> -->
+
+        <table mat-table [dataSource]="tasks">
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let task">
+              <div>{{task.title}}</div>
+              <mat-chip-list>
+                <mat-chip class="small-chip">front end</mat-chip>
+                <mat-chip class="small-chip">api</mat-chip>
+                <mat-chip class="small-chip">data models</mat-chip>
+              </mat-chip-list>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="creator">
+            <th mat-header-cell *matHeaderCellDef>Created By</th>
+            <td mat-cell *matCellDef="let task">{{task.creator}}</td>
+          </ng-container>
+          <ng-container matColumnDef="dueDate">
+            <th mat-header-cell *matHeaderCellDef>Due Date</th>
+            <td mat-cell *matCellDef="let task">{{task.dueDate}}</td>
+          </ng-container>
+          <ng-container matColumnDef="points">
+            <th mat-header-cell *matHeaderCellDef>Points</th>
+            <td mat-cell *matCellDef="let task">{{task.points}}</td>
+          </ng-container>
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let task">
+              <button mat-mini-fab class="mr-1" (click)="openTask()"><mat-icon>view_list</mat-icon></button>
+              <button mat-mini-fab class="mr-1" (click)="editTask()"><mat-icon>edit</mat-icon></button>
+              <button mat-mini-fab class="mr-1" (click)="markComplete()"><mat-icon>check_circle</mat-icon></button>
+              <button mat-mini-fab class="mr-1" (click)="deleteTask(task.id)"><mat-icon>delete_forever</mat-icon></button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="taskHeaders" class="mt-5"></tr>
+          <tr mat-row *matRowDef="let row; columns: taskHeaders;"></tr>
+        </table>
+
       </div>
   </mat-drawer-content>
 
