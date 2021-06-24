@@ -1,8 +1,10 @@
 <mat-drawer-container hasBackdrop>
+
   <mat-drawer #drawer>
     <button mat-raised-button (click)="drawer.close()" onclick="this.blur()">Close</button>
-    <p>I'm a drawer, hear me wrawer!</p>
+    <a mat-button (click)="drawer.close()" color="primary" [routerLink]="['/view/tasks']" routerLinkActive="router-link-active" class="d-block">Task View</a>
   </mat-drawer>
+
   <mat-drawer-content>
     <mat-toolbar color="primary" class="mat-elevation-z10">
       <button mat-icon-button (click)="drawer.open()">
@@ -10,8 +12,7 @@
       </button>
       <span>Graceland PM</span>
     </mat-toolbar>
-
-    <gl-task-list></gl-task-list>
-
+    <router-outlet></router-outlet>
   </mat-drawer-content>
+
 </mat-drawer-container>

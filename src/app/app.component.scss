@@ -3,3 +3,16 @@ mat-drawer {
   min-width: 300px;
   max-width: 300px;
 }
+
+mat-drawer a {
+  text-align: left;
+  text-decoration: none;
+}
+
+mat-drawer-container {
+  height: 100%
+}
+
+.router-link-active {
+  font-weight: bold;
+}
