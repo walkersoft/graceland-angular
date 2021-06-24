@@ -1,1 +1,17 @@
-<gl-task-list></gl-task-list>
+<mat-drawer-container hasBackdrop>
+  <mat-drawer #drawer>
+    <button mat-raised-button (click)="drawer.close()" onclick="this.blur()">Close</button>
+    <p>I'm a drawer, hear me wrawer!</p>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar color="primary" class="mat-elevation-z10">
+      <button mat-icon-button (click)="drawer.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Graceland PM</span>
+    </mat-toolbar>
+
+    <gl-task-list></gl-task-list>
+
+  </mat-drawer-content>
+</mat-drawer-container>
