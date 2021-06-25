@@ -3,6 +3,7 @@
   <mat-drawer #drawer>
     <button mat-raised-button (click)="drawer.close()" onclick="this.blur()">Close</button>
     <a mat-button (click)="drawer.close()" color="primary" [routerLink]="['/view/tasks']" routerLinkActive="router-link-active" class="d-block">Task View</a>
+    <a mat-button (click)="drawer.close()" color="primary" [routerLink]="['/view/users']" routerLinkActive="router-link-active" class="d-block">User View</a>
   </mat-drawer>
 
   <mat-drawer-content>

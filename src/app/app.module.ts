@@ -16,8 +16,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatChipsModule } from '@angular/material/chips';
 import { TaskListComponent } from './tasks/task-list.component';
-import { Routes } from '@angular/router';
 import { UserListComponent } from './users/user-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -28,6 +28,7 @@ import { UserListComponent } from './users/user-list.component';
     UserListComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
