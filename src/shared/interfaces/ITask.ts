@@ -7,7 +7,7 @@ export interface ITask {
   points: number;
   completed: boolean;
   creator: IUser;
-  assignees: IUser[];
+  assignees: string[];
   createdDate: Date;
   dueDate: Date;
   completionDate: Date;
