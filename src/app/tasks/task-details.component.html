@@ -1,7 +1,6 @@
 
 <div *ngIf="task">
   <h3>{{ task.title}}</h3>
-  <button mat-mini-fab class="mr-1" (click)="openTask()"><mat-icon>view_list</mat-icon></button>
   <button mat-mini-fab class="mr-1" (click)="editTask()"><mat-icon>edit</mat-icon></button>
   <button mat-mini-fab class="mr-1" (click)="markComplete()"><mat-icon>check_circle</mat-icon></button>
   <button mat-mini-fab class="mr-1" (click)="deleteTask(task.id)"><mat-icon>delete_forever</mat-icon></button>
