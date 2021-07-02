@@ -1,0 +1,20 @@
+
+<div *ngIf="task">
+  <h3>{{ task.title}}</h3>
+  <button mat-mini-fab class="mr-1" (click)="openTask()"><mat-icon>view_list</mat-icon></button>
+  <button mat-mini-fab class="mr-1" (click)="editTask()"><mat-icon>edit</mat-icon></button>
+  <button mat-mini-fab class="mr-1" (click)="markComplete()"><mat-icon>check_circle</mat-icon></button>
+  <button mat-mini-fab class="mr-1" (click)="deleteTask(task.id)"><mat-icon>delete_forever</mat-icon></button>
+  <br/><br/>
+  <h4>Task Info - {{ task.completed ? 'Closed' : 'Open' }}</h4>
+  <p><strong>Creation Date:</strong> {{ task.createdDate }}
+    | <strong>Due Date:</strong> {{ task.dueDate }}
+    | <strong>Points:</strong> {{ task.points }}
+  </p>
+  <p><strong>Completion Date:</strong> {{ task.completionDate }}</p>
+  <p><strong>Created by:</strong> {{ getCreatorName(task.creator) }}</p>
+  <p><strong>Assigned to:</strong> {{ getAssignees(task) }}</p>
+
+  <h4>Description</h4>
+  <p>{{ task.description }}</p>
+</div>

@@ -4,7 +4,7 @@
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let task">
-        <div>{{task.title}}</div>
+        <div><a [routerLink]="['/view/task/', task.id]">{{task.title}}</a></div>
         <mat-chip-list>
           <mat-chip class="small-chip">front end</mat-chip>
           <mat-chip class="small-chip">api</mat-chip>

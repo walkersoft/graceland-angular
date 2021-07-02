@@ -18,6 +18,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { TaskListComponent } from './tasks/task-list.component';
 import { UserListComponent } from './users/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskDetailsComponent } from './tasks/task-details.component';
 
 
 
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     TaskListComponent,
-    UserListComponent
+    UserListComponent,
+    TaskDetailsComponent
   ],
   imports: [
     HttpClientModule,
