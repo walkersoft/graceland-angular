@@ -1,19 +1,43 @@
-
-<div *ngIf="task">
-  <h3>{{ task.title}}</h3>
-  <button mat-mini-fab class="mr-1" (click)="editTask()"><mat-icon>edit</mat-icon></button>
-  <button mat-mini-fab class="mr-1" (click)="markComplete()"><mat-icon>check_circle</mat-icon></button>
-  <button mat-mini-fab class="mr-1" (click)="deleteTask(task.id)"><mat-icon>delete_forever</mat-icon></button>
-  <br/><br/>
-  <h4>Task Info - {{ task.completed ? 'Closed' : 'Open' }}</h4>
-  <p><strong>Creation Date:</strong> {{ task.createdDate }}
-    | <strong>Due Date:</strong> {{ task.dueDate }}
-    | <strong>Points:</strong> {{ task.points }}
-  </p>
-  <p><strong>Completion Date:</strong> {{ task.completionDate }}</p>
-  <p><strong>Created by:</strong> {{ getCreatorName(task.creator) }}</p>
-  <p><strong>Assigned to:</strong> {{ getAssignees(task) }}</p>
-
-  <h4>Description</h4>
-  <p>{{ task.description }}</p>
-</div>
+<mat-card *ngIf="task" class="example-card m-4 mat-elevation-z5">
+  <mat-card-header>
+    <mat-card-title>{{ task.title }}</mat-card-title>
+    <mat-card-subtitle fxLayout="row">
+      <div class="task-status" fxFlex="auto">
+        <p *ngIf="task.completed">
+          Task Closed - Completed on: {{ task.completionDate }}
+          <button mat-mini-fab color="primary" title="Reopen Task" (click)="reopenTask()"><mat-icon>restore</mat-icon></button>
+        </p>
+        <p *ngIf="!task.completed">
+          Task Open - Due on: {{ task.dueDate }}
+          <button mat-mini-fab color="primary" title="Mark Complete" (click)="markComplete()"><mat-icon>check_circle</mat-icon></button>
+        </p>
+      </div>
+      <div class="task-info" fxLayout="column" fxFlex="auto">
+        <span><strong>Created On:</strong></span>
+        <span>{{ task.createdDate }}</span>
+      </div>
+      <div class="task-info" fxLayout="column" fxFlex="auto">
+        <span><strong>Created By:</strong></span>
+        <span>{{ getCreatorName(task.creator) }}</span>
+      </div>
+      <div class="task-info" fxLayout="column" fxFlex="auto">
+        <span><strong>Points:</strong></span>
+        <span>{{ task.points }}</span>
+      </div>
+      <div class="task-info" fxLayout="column" fxFlex="auto" fxFill>
+        <span><strong>Assigned To:</strong></span>
+        <span>{{ getAssignees(task) }}</span>
+      </div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <h5>Description</h5>
+    <p>
+      {{ task.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="editTask()"><mat-icon>edit</mat-icon> EDIT TASK</button>
+    <button mat-raised-button color="warn" (click)="deleteTask(task.id)"><mat-icon>delete_forever</mat-icon> DELETE TASK</button>
+  </mat-card-actions>
+</mat-card>

@@ -56,6 +56,9 @@ export class TaskDetailsComponent implements OnInit {
   editTask(): void {
     this.snackBar.open("Task is being worked on.", "...WORK?!", this.snackBarDuration);
   }
+  reopenTask(): void {
+    this.snackBar.open("Task was re-opened", "DANG...", this.snackBarDuration);
+  }
 
   getCreatorName(id: string): string {
     if (!this.users) return ''; //null check - how to get around this?
