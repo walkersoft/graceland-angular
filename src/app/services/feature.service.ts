@@ -10,7 +10,7 @@ export class FeatureService {
   featureStore: string = 'assets/dummy-data/features.json';
   constructor(private http: HttpClient) { }
 
-  getFeatures(): Observable<IFeature> {
-    return this.http.get<IFeature>(this.featureStore);
+  getFeatures(): Observable<IFeature[]> {
+    return this.http.get<IFeature[]>(this.featureStore);
   }
 }

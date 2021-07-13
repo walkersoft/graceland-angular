@@ -19,6 +19,7 @@ import { TaskListComponent } from './tasks/task-list.component';
 import { UserListComponent } from './users/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskDetailsComponent } from './tasks/task-details.component';
+import { FeatureListComponent } from './features/feature-list.component';
 
 
 
@@ -27,7 +28,8 @@ import { TaskDetailsComponent } from './tasks/task-details.component';
     AppComponent,
     TaskListComponent,
     UserListComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    FeatureListComponent
   ],
   imports: [
     HttpClientModule,
